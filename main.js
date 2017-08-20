@@ -9,40 +9,25 @@
 // 5. Create a way to listen for a click that will play the song in the audio play
 
 let section = document.querySelector("section");
-
+let search = document.querySelector("button");
+search.addEventListener('click', function () {
+  fetch("https://itunes.apple.com/search?term={stuff}")
+    .then(convertFromJson)
+    .then(displayMusic)
+});
 function convertFromJson(response) {
   return response.json();
 }
-
+let stuff = {};
 function displayMusic(artists) {
-  console.log (artists);
   for (let i = 0; i < artists.results.length; i++) {
-
-
+    stuff.push(artists.results[i]);
     let music = `
-<div>
-<h3> ${artists.results[i].trackName}</h3>
-<img src= "${artists.results[i].artworkUrl30}">
-</div>
-`
+    <div>
+    <h3> ${artists.results[i].trackName}</h3>
+    <img src= "${artists.results[i].artworkUrl100}">
+    ${artists.results[i].artistName}</div>
+    `
     section.innerHTML += music;
   };
-
 };
-
-
-
-
-
-
-
-
-fetch("https://itunes.apple.com/search?term=jack+johnson")
-  .then(convertFromJson)
-  .then(displayMusic)
-
-
-
-
-
-console.log(fetch);
