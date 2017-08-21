@@ -1,3 +1,50 @@
 body {
-  background-color: #60d9f1;
+  background-color: #5C0552;
+}
+h1{
+  font-size: 45px;
+  color: lightgrey;
+  font-family: Impact;
+  display : flex;
+  justify-content: center;
+}
+input{
+  font-size: 20px;
+  float: right;
+  width: 200px;
+  height: 40px;
+  background-color: lightgrey;
+  color: dimgrey;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+audio.music-player{
+  display: flex;
+  align-content: center;
+  float: left;
+  
+}
+#search{
+  width: 100px;
+  height: 45px;
+  color: white;
+  background-color: dimgrey;
+  font-size: 15px;
+  float: right;
+  
+}
+img{
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  margin-right: 0px
+}
+.first{
+  display: block;
+}
+h3{
+  color: lightgrey;
+  font-size: 25px; 
+  font-family: Impact;
 }
