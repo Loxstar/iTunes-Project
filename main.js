@@ -7,21 +7,23 @@
 // 3. Create your `fetch` request that is called after a submission
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
-
+let input = document.querySelector("#input");
 let section = document.querySelector("section");
 let search = document.querySelector("button");
 search.addEventListener('click', function () {
-  fetch("https://itunes.apple.com/search?term={stuff}")
+  let stuff = input.value;
+  console.log(stuff);
+  fetch(`https://itunes.apple.com/search?term=${stuff}&limit=12`)
     .then(convertFromJson)
     .then(displayMusic)
 });
 function convertFromJson(response) {
   return response.json();
 }
-let stuff = {};
+
 function displayMusic(artists) {
   for (let i = 0; i < artists.results.length; i++) {
-    stuff.push(artists.results[i]);
+    // stuff.push(artists.results[i]);
     let music = `
     <div>
     <h3> ${artists.results[i].trackName}</h3>
