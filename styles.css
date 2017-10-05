@@ -1,12 +1,13 @@
 body {
-  background-color: #5C0552;
+  background-image: url("https://images4.alphacoders.com/788/thumb-1920-788512.png");
+  background-position-x: -125px;
 }
 h1{
-  font-size: 45px;
+  font-size: 55px;
   color: lightgrey;
-  font-family: Impact;
-  display : flex;
+  font-family: 'Amatic SC', cursive;
   justify-content: center;
+  display: flex;
 }
 input{
   font-size: 20px;
